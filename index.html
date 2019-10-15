@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>My App</title>
+    <link rel="stylesheet" href="lib/bootstrap/bootstrap.css" />
+    <link rel="stylesheet" href="css/app.css" />
+</head>
+
+<body>
+    <header class="box">
+        <img src="img/layout/logo.png" width="200px" />
+        <h1>Guess Who</h1>
+    </header>
+
+    <main>
+        <section class="game-start">
+            <h2>Think of Someone...</h2>
+            <button onclick="onStartGuessing()" class="btn btn-lg btn-success">I'm Ready!</button>
+        </section>
+        <section class="quest" style="display: none">
+            <h1 class="success"></h1>
+            <h2></h2>
+            <button onclick="onUserResponse('yes')" class="btn btn-info">Yes</button>
+            <button onclick="onUserResponse('no')" class="btn btn-danger">No</button>
+        </section>
+        <section class="victory" style="display: none">
+            <h2 class="success">Yes! i knew it!</h2>
+            <button onclick="onRestartGame()" class="btn btn-info">Play Again</button>
+        </section>
+        <section class="new-quest" style="display: none; width:35% ;">
+            <h2>OK, I gave up...</h2>
+
+            <form class="form-horizontal">
+                <div class="form-group">
+                    <label for="newGuess" class="col-sm-6 control-label">You thought of: </label>
+                    <div class="col-12">
+                        <input name="newGuess" type="txt" class="form-control" id="newGuess" placeholder="Your Guess" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="newQuest" class="col-sm-6 control-label">Question to differentiate</label>
+                    <div class="col-12">
+                        <input name="newQuest" type="txt" class="form-control" id="newQuest" placeholder="The answer is YES for yours" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-12">
+                        <button type="submit" onclick="onRestartGame()" class="btn btn-secondary mx-auto row-6">
+                            Play Again
+                        </button>
+                        <button type="submit" onclick="onAddGuess()" class="btn btn-secondary mx-auto mt-5px
+                        row-6">
+              Make me Smarter!
+            </button>
+                    </div>
+                </div>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        cofferight &copy; 2016
+    </footer>
+
+    <script src="lib/jquery/jquery.js"></script>
+    <script src="js/quest-util.js"></script>
+    <script src="js/quest-service.js"></script>
+    <script src="js/quest-controller.js"></script>
+
+
+</body>
+
+</html>
